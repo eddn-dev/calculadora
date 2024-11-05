@@ -1,0 +1,33 @@
+{
+  "name": "mvc-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "keywords": [],
+  "author": "Edd-n-dev",
+  "license": "ISC",
+  "description": "Plantilla de desarrollo MVC con React.js",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "babelify": "^10.0.0",
+    "browser-sync": "^3.0.3",
+    "browserify": "^17.0.1",
+    "glob": "^11.0.0",
+    "gulp": "^5.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.80.5",
+    "sharp": "^0.33.5",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

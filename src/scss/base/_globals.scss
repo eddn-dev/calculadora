@@ -1,0 +1,81 @@
+@use 'variables' as v;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-padding-top: 0rem;
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    font-family: 'Coolvetica';
+    font-optical-sizing: auto;
+    font-style: normal;
+    line-height: v.$line-height-md;
+    font-size: 2rem;
+    background-image: url('../img/bg.avif');
+    margin-top: 10px;
+
+    &.overflow-hidden{
+        overflow: hidden;
+    }
+}
+
+p{
+    font-size: v.$font-size-xs;
+    color: v.$color-black;
+    line-height: 1.5;
+    font-family: 'Coolvetica', Verdana, Geneva;
+}
+
+.container{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+img,
+picture
+{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+body > section{
+    padding: 10rem 0;
+}
+
+h1{
+    font-size: v.$font-size-h1;
+}
+
+h2{
+    font-size: v.$font-size-h2;
+}
+
+h3{
+    font-size: v.$font-size-h3;
+}
+
+h4{
+    font-size: v.$font-size-h4;
+}
+
+h5{
+    font-size: v.$font-size-h5;
+}
+
+h6{
+    font-size: v.$font-size-h6;
+}

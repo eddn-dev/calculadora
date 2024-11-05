@@ -1,0 +1,14 @@
+{
+    "name": "vendor/mvc_react",
+    "description": "Proyecto con PHP y React",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Controllers\\": "./controllers",
+            "Model\\": "./models",
+            "Classes\\": "./classes"
+        }
+    },
+    "require": {}
+}

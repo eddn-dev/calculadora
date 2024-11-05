@@ -1,0 +1,86 @@
+// File: _variables.scss
+// Variables for the project
+// Font
+@font-face {
+  font-family: 'Android 101'; 
+  src: url('../../build/fonts/Android 101.ttf') format('truetype'),
+        url('../../build/fonts/Android101.otf') format('opentype'); 
+  font-weight: normal; 
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Coolvetica'; 
+  src: url('../../build/fonts/coolvetica rg.otf') format('opentype'); 
+  font-weight: normal; 
+  font-style: normal; 
+}
+
+$font: 'Android 101', sans-serif;
+$font-secondary: 'Coolvetica', Verdana;
+
+// Breakpoints
+$bk-phone: 480px;
+$bk-tablet: 768px;
+$bk-desktop: 1200px;
+$bk-large-desktop: 1400px;
+
+// Colors
+$color-primary: #ff6f61;
+$color-secondary: #ffcc5c;
+$color-tertiary: #ffeead;
+$color-dark: #333;
+$color-light: #f4f4f4;
+$color-white: #fff;
+$color-black: #000;
+$color-red: #db0e0e;
+$color-green: #0a901a;
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 20px;
+$spacing-lg: 30px;
+$spacing-xl: 40px;
+$spacing-xxl: 50px;
+
+// Z-index
+$z-index-header: 100;
+$z-index-modal: 200;
+$z-index-overlay: 300;
+$z-index-dropdown: 400;
+$z-index-tooltip: 500;
+$z-index-alert: 600;
+$z-index-loader: 700;
+$z-index-fixed: 800;
+$z-index-sticky: 900;
+$z-index-footer: 1000;
+
+
+// Font weight
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// Font size
+$font-size-xs: 1.2rem;
+$font-size-sm: 1.4rem;
+$font-size-md: 1.6rem;
+$font-size-lg: 1.8rem;
+$font-size-xl: 2rem;
+$font-size-xxl: 2.4rem;
+$font-size-h1: 3.6rem;
+$font-size-h2: 3rem;
+$font-size-h3: 2.4rem;
+$font-size-h4: 2rem;
+$font-size-h5: 1.8rem;
+$font-size-h6: 1.6rem;
+
+// Line height
+$line-height-xs: 1.2;
+$line-height-sm: 1.4;
+$line-height-md: 1.6;
+$line-height-lg: 1.8;
+$line-height-xl: 2;
+$line-height-xxl: 2.4;
