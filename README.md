@@ -1,17 +1,48 @@
+# Calculadora para redes
+
+Segundo proyecto para Redes: Calculadora para subredes
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+## Nota
 
-First, run the development server:
+Es importante tener **yarn**, ya que la instalación con **npm** tiene conflictos con la nueva versión de React y las librerias
+
+## Instalación Yarn
+
+Instala Yarn con el siguiente comando
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install -g yarn # -g para instalarlo global
+```
+
+Prueba que esta instalado con
+
+```bash
+yarn --version # Da la versión del Yarn
+```
+
+Si no te deja ejecutar Yarn en el PowerShell ejecuta el siguiente comando
+
+```bash
+Set-ExecutionPolicy Unrestricted # Permite que Yarn se ejecute en consola
+```
+
+## Getting started
+
+Clona el repositorio
+
+```bash
+git clone https://github.com/eddn-dev/calculadora.git
+```
+
+Para el instalar y ejecutar el proyecto usamos **yarn**
+
+```bash
+yarn install # Descarga las dependencias necesarias del proyecto
+```
+```bash
+yarn dev # Compila y corre la página en el puerto 3000
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
