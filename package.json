@@ -1,33 +1,30 @@
 {
-  "name": "mvc-react",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "calc",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "gulp"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "Edd-n-dev",
-  "license": "ISC",
-  "description": "Plantilla de desarrollo MVC con React.js",
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.7",
+    "@mui/material": "^6.1.7",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.0",
-    "@babel/preset-env": "^7.26.0",
-    "@babel/preset-react": "^7.25.9",
-    "babelify": "^10.0.0",
-    "browser-sync": "^3.0.3",
-    "browserify": "^17.0.1",
-    "glob": "^11.0.0",
-    "gulp": "^5.0.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-terser": "^2.1.0",
-    "sass": "^1.80.5",
-    "sharp": "^0.33.5",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }

@@ -1,1 +1,0 @@
-"use strict";var _react=_interopRequireDefault(require("react")),_reactDom=_interopRequireDefault(require("react-dom")),_App=_interopRequireDefault(require("./App"));function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}_reactDom.default.render(_react.default.createElement(_App.default,null),document.getElementById("root"));
