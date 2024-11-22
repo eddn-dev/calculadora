@@ -7,6 +7,7 @@ type SubnetData = {
   
   type SubnetResult = {
     tipo: string;
+    priv: boolean;
     subnetMask: number;
     subnetMaskDecimal: string;
     totalSubnets: number;
@@ -16,6 +17,19 @@ type SubnetData = {
     showAllSubnets: boolean;
     error?: string;
   };
+  
+  function isPrivateNetwork(ipParts: number[]): boolean {
+    // Clase A privada: 10.0.0.0 a 10.255.255.255
+    if (ipParts[0] === 10) return true;
+    
+    // Clase B privada: 172.16.0.0 a 172.31.255.255
+    if (ipParts[0] === 172 && ipParts[1] >= 16 && ipParts[1] <= 31) return true;
+    
+    // Clase C privada: 192.168.0.0 a 192.168.255.255
+    if (ipParts[0] === 192 && ipParts[1] === 168) return true;
+    
+    return false;
+  }
   
   function calcularSubred(ip: string, mask: number, subnetMask: number, showPartialResults: boolean = false): SubnetResult {
     const ipParts = ip.split('.').map(Number);
@@ -73,12 +87,16 @@ type SubnetData = {
         }
       }
     }
+
+    
   
     const tipo = getIpClass(ipParts[0]);
+    const priv = isPrivateNetwork(ipParts);
   
     return {
       tipo,
-      subnetMask: subnetMask,
+      priv,
+      subnetMask,
       subnetMaskDecimal: intToIp(subnetMaskInt),
       totalSubnets,
       hostsPerSubnet,

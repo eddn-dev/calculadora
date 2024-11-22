@@ -22,7 +22,7 @@ Prueba que esta instalado con
 yarn --version # Da la versión del Yarn
 ```
 
-Si no te deja ejecutar Yarn en el PowerShell ejecuta el siguiente comando
+Si no te deja ejecutar Yarn en el PowerShell ejecuta el siguiente comando como administrador
 
 ```bash
 Set-ExecutionPolicy Unrestricted # Permite que Yarn se ejecute en consola
