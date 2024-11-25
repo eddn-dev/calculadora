@@ -12,3 +12,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.text-field {
+  width: 150px;
+}
