@@ -24,7 +24,7 @@ import NetMask from "@/components/Netmask";
 import SubnetMask from "@/components/SubnetMask";
 import calcularSubred from "@/ts/calculos";
 
-export default function Results() {
+export default function ResultsEsc() {
     const [tempIp, setTempIP] = React.useState("");
     const [tempMask, setTempMask] = React.useState<number | undefined>(undefined);
     const [tempSubnetMaskValue, setTempSubnetMaskValue] = React.useState<number | undefined>(undefined);
@@ -125,44 +125,45 @@ export default function Results() {
     };
 
     return (
-        <Grid2>
-            <Grid2 size={6}>
-                {/* Formulario de entrada */}
-                <Grid2 className="flex flex-col md:flex-row items-center gap-4 mb-4">
+        <Grid2 container sx={{ height: '92vh', width: '100vw' }}>
+            {/* Contenedor izquierdo */}
+            <Grid2 direction="column" container size={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
+                <Grid2 container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                     <IP setIP={setTempIP} />
-                    <Typography variant="overline" fontSize={28} marginTop={3.5}>
+                    <Typography variant="overline" fontSize={28} marginTop={3.5} marginX={2}>
                         /
                     </Typography>
                     <NetMask setMask={setTempMask} />
-                    <Typography variant="overline" fontSize={15} marginTop={3.5}>
+                    <Typography variant="overline" fontSize={15} marginTop={3.5} marginX={2}>
                         Mover a
                     </Typography>
                     <SubnetMask setSubnetMask={setTempSubnetMaskValue} />
                 </Grid2>
-                <Grid2>
+                <Grid2 container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                     <Button
                         variant="contained"
                         onClick={handleCalcular}
                         disabled={!tempIp}
-                        className="mb-4"
+                        className="mb-4 button"
                     >
                         Calcular
                     </Button>
                 </Grid2>
-                <Grid2>
+                <Grid2 container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                     <FormControl>
                         <FormControlLabel
                             control={
                                 <Checkbox
                                     checked={isPartial}
                                     onChange={(e) => handleTogglePartial(e.target.checked)}
+                                    className="custom-checkbox"
                                 />
                             }
                             label="Calcular solo las primeras y últimas redes"
                         />
                     </FormControl>
                 </Grid2>
-                <Grid2>
+                <Grid2 container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                     {/* Resultados básicos */}
                     {showBasicResults && results && (
                         <Box
@@ -171,12 +172,10 @@ export default function Results() {
                                 maxWidth: "3xl",
                                 p: 3,
                                 mb: 4,
-                                border: "1px solid",
-                                borderColor: "divider",
-                                borderRadius: 2,
                                 mx: "auto",
                             }}
                             marginTop={3}
+                            className= "custom-box"
                         >
                             <Typography variant="h6" gutterBottom className="text-center pb-2">
                                 Resultados de la Red
@@ -275,13 +274,14 @@ export default function Results() {
                             )}
                         </Box>
                     )}
-                </Grid2>                
+                </Grid2>
             </Grid2>
-            <Grid2 size={6}>
+            {/* Contenedor derecho */}
+            <Grid2 size={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                 {/* Tabla de subredes */}
                 {showTable && results && SubnetMaskValue !== undefined && visibleSubnets.length > 0 && (
                     <div className="w-full max-w-3xl">
-                        <TableContainer sx={{ maxHeight: 400 }}>
+                        <TableContainer sx={{ maxHeight: '85vh', overflowY: 'auto' }} className="scroll-hidden">
                             <Table stickyHeader aria-label="sticky table" size="small">
                                 <TableHead>
                                     <TableRow>

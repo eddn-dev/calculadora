@@ -3,16 +3,53 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F8F0EE;
+  --text: #171717;
+  --components: #53D0EC;
+  --components2: #2748A0;
+  --esp: #E5386D;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #231934;
+    --text: #F1F1F1;
+    --esp: #246BFD;
+    --components: #8EC97B;
+    --components2: #F79193;
+  }
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .text-field {
   width: 150px;
+}
+
+.button {
+  background-color: var(--components2);
+}
+
+.custom-checkbox.Mui-checked {
+  color: var(--components2); /* Color cuando está seleccionado */
+}
+
+.custom-box {
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: var(--components2);
+}
+
+/* Ocultar las barras de desplazamiento para todos los navegadores */
+.scroll-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Edge */
 }
