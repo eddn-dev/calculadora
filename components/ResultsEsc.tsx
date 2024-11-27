@@ -125,7 +125,7 @@ export default function ResultsEsc() {
     };
 
     return (
-        <Grid2 container sx={{ height: '92vh', width: '100vw' }}>
+        <Grid2 container sx={{ height: '30vh', width: '97vw' }}>
             {/* Contenedor izquierdo */}
             <Grid2 direction="column" container size={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                 <Grid2 container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >

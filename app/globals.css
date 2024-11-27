@@ -48,8 +48,10 @@ body {
 .scroll-hidden {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
+  overflow-y: scroll; /* Asegura que el scroll siga funcional */
 }
 
 .scroll-hidden::-webkit-scrollbar {
   display: none; /* Chrome, Safari y Edge */
 }
+

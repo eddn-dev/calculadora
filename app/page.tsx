@@ -11,13 +11,15 @@ export default function Home() {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
     return (
-        <ThemeWrapper prefersDarkMode={prefersDarkMode}>
-            <div className="flex flex-col items-center justify-center">
-                <Typography variant="h4" gutterBottom className="text-center mt-2">
-                    Calculadora de subredes
-                </Typography>
-                <ResultsEsc />
-            </div>
-        </ThemeWrapper>
+        <div className="scroll-hidden h-screen w-full">
+            <ThemeWrapper prefersDarkMode={prefersDarkMode}>
+                <div className="flex flex-col items-center justify-center">
+                    <Typography variant="h4" gutterBottom className="text-center mt-2">
+                        Calculadora de subredes
+                    </Typography>
+                    <ResultsEsc />
+                </div>
+            </ThemeWrapper>
+        </div>
     );
 }
