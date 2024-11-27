@@ -31,7 +31,7 @@ export default function IP({ setIP }: IPProps) {
     return (
         <div className="grid grid-cols-1 sm:w-auto w-full">
             <div className="flex mb-2">
-                <Typography variant="overline" className="text-center sm:text-left">
+                <Typography variant="overline" className="text-center sm:text-left texto">
                     Dirección IP:
                 </Typography>
             </div>
@@ -45,7 +45,7 @@ export default function IP({ setIP }: IPProps) {
                     onChange={handleChange}
                     error={error}
                     helperText={error ? "Ingrese una IP válida (e.g., 192.168.0.1)" : ""}
-                    className="text-field"
+                    className="text-field texto"
                 />
             </div>
         </div>

@@ -28,7 +28,7 @@ export default function NetMask({ setMask }: NetMaskProps) {
     return (
         <div className="grid grid-cols-1 sm:w-auto w-full">
             <div className="flex mb-2">
-                <Typography variant="overline" className="text-center sm:text-left">
+                <Typography variant="overline" className="text-center sm:text-left texto">
                     Máscara de red:
                 </Typography>
             </div>
@@ -41,7 +41,7 @@ export default function NetMask({ setMask }: NetMaskProps) {
                     type="number"
                     value={localMask}
                     onChange={handleChange}
-                    className="text-field"
+                    className="text-field texto"
                     slotProps={{
                         input: {
                             inputProps: {

@@ -28,7 +28,7 @@ export default function SubnetMask({ setSubnetMask }: SubnetMaskProps) {
     return (
         <div className="grid grid-cols-1 sm:w-auto w-full">
             <div className="flex mb-2">
-                <Typography variant="overline" className="text-center sm:text-left">
+                <Typography variant="overline" className="text-center sm:text-left texto">
                     Máscara de Subnet:
                 </Typography>
             </div>

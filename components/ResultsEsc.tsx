@@ -127,14 +127,14 @@ export default function ResultsEsc() {
     return (
         <Grid2 container sx={{ height: '30vh', width: '97vw' }}>
             {/* Contenedor izquierdo */}
-            <Grid2 direction="column" container size={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
+            <Grid2 direction="column" container size={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="pr-12">
                 <Grid2 container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
                     <IP setIP={setTempIP} />
-                    <Typography variant="overline" fontSize={28} marginTop={3.5} marginX={2}>
+                    <Typography variant="overline" fontSize={28} marginTop={4.5} marginX={2} className="texto">
                         /
                     </Typography>
                     <NetMask setMask={setTempMask} />
-                    <Typography variant="overline" fontSize={15} marginTop={3.5} marginX={2}>
+                    <Typography variant="overline" fontSize={15} marginTop={4.5} marginX={2} className="texto">
                         Mover a
                     </Typography>
                     <SubnetMask setSubnetMask={setTempSubnetMaskValue} />
@@ -144,7 +144,7 @@ export default function ResultsEsc() {
                         variant="contained"
                         onClick={handleCalcular}
                         disabled={!tempIp}
-                        className="mb-4 button"
+                        className="mb-4 button texto"
                     >
                         Calcular
                     </Button>
@@ -160,6 +160,7 @@ export default function ResultsEsc() {
                                 />
                             }
                             label="Calcular solo las primeras y últimas redes"
+                            className="custom-label"
                         />
                     </FormControl>
                 </Grid2>
@@ -168,106 +169,114 @@ export default function ResultsEsc() {
                     {showBasicResults && results && (
                         <Box
                             sx={{
-                                width: "100%",
-                                maxWidth: "3xl",
-                                p: 3,
+                                width: "600px",
+                                maxWidth: "1200px",
+                                p: 2,
                                 mb: 4,
                                 mx: "auto",
                             }}
                             marginTop={3}
                             className= "custom-box"
                         >
-                            <Typography variant="h6" gutterBottom className="text-center pb-2">
+                            <Typography variant="h6" gutterBottom className="text-center pb-2 texto">
                                 Resultados de la Red
                             </Typography>
                             <Grid2 container spacing={2}>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">IP: {Ip}</Typography>
+                                    <Typography variant="overline" className="texto">IP: </Typography>
+                                    <Typography variant="overline" className="texto-num">{Ip}</Typography>
                                 </Grid2>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">{results.inputIpBinario}</Typography>
+                                    <Typography variant="overline" className="texto-num">{results.inputIpBinario}</Typography>
                                 </Grid2>
                             </Grid2>
                             <Grid2 container spacing={2}>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">
-                                        Máscara de Red: {results.maskDecimal} = {results.mask}
-                                    </Typography>
+                                    <Typography variant="overline" className="texto">Máscara de Red: </Typography>
+                                    <Typography variant="overline" className="texto-num">{results.maskDecimal} = {results.mask}</Typography>
                                 </Grid2>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">{results.maskBinario}</Typography>
+                                    <Typography variant="overline" className="texto-num">{results.maskBinario}</Typography>
                                 </Grid2>
                             </Grid2>
                             <Grid2 container spacing={2} className="pb-2">
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">Bits para redes: {results.wildcardOriginalDecimal}</Typography>
+                                    <Typography variant="overline" className="texto">Bits para redes: </Typography>
+                                    <Typography variant="overline" className="texto-num">{results.wildcardOriginalDecimal}</Typography>
                                 </Grid2>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">{results.wildcardOriginalBinario}</Typography>
-                                </Grid2>
-                            </Grid2>
-                            <Grid2 container spacing={2}>
-                                <Grid2 size={6}>
-                                    <Typography variant="overline">Red: {results.network}</Typography>
-                                </Grid2>
-                                <Grid2 size={6}>
-                                    <Typography variant="overline">{results.networkBinario}</Typography>
+                                    <Typography variant="overline" className="texto-num">{results.wildcardOriginalBinario}</Typography>
                                 </Grid2>
                             </Grid2>
                             <Grid2 container spacing={2}>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">Host Minimo: {results.hostMin}</Typography>
+                                    <Typography variant="overline" className="texto">Red: </Typography>
+                                    <Typography variant="overline" className="texto-num">{results.network}</Typography>
                                 </Grid2>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">{results.hostMinBinario}</Typography>
-                                </Grid2>
-                            </Grid2>
-                            <Grid2 container spacing={2}>
-                                <Grid2 size={6}>
-                                    <Typography variant="overline">Host Maximo: {results.hostMax}</Typography>
-                                </Grid2>
-                                <Grid2 size={6}>
-                                    <Typography variant="overline">{results.hostMaxBinario}</Typography>
+                                    <Typography variant="overline" className="texto-num">{results.networkBinario}</Typography>
                                 </Grid2>
                             </Grid2>
                             <Grid2 container spacing={2}>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">Broadcast: {results.broadcast}</Typography>
+                                    <Typography variant="overline" className="texto">Host Minimo: </Typography>
+                                    <Typography variant="overline" className="texto-num">{results.hostMin}</Typography>
                                 </Grid2>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">{results.broadcastBinario}</Typography>
+                                    <Typography variant="overline" className="texto-num">{results.hostMinBinario}</Typography>
                                 </Grid2>
                             </Grid2>
                             <Grid2 container spacing={2}>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline">Total de Hosts en la red: {results?.totalHosts}</Typography>
+                                    <Typography variant="overline" className="texto">Host Maximo: </Typography>
+                                    <Typography variant="overline" className="texto-num">{results.hostMax}</Typography>
                                 </Grid2>
                                 <Grid2 size={6}>
-                                    <Typography variant="overline" className="pr-5">{results.tipo}</Typography>
-                                    {results.priv ? <Typography variant="overline">Red privada</Typography> : ""}
+                                    <Typography variant="overline" className="texto-num">{results.hostMaxBinario}</Typography>
+                                </Grid2>
+                            </Grid2>
+                            <Grid2 container spacing={2}>
+                                <Grid2 size={6}>
+                                    <Typography variant="overline" className="texto">Broadcast: </Typography>
+                                    <Typography variant="overline" className="texto-num">{results.broadcast}</Typography>
+                                </Grid2>
+                                <Grid2 size={6}>
+                                    <Typography variant="overline" className="texto-num">{results.broadcastBinario}</Typography>
+                                </Grid2>
+                            </Grid2>
+                            <Grid2 container spacing={2}>
+                                <Grid2 size={6}>
+                                    <Typography variant="overline" className="texto">Total de Hosts en la red: </Typography>
+                                    <Typography variant="overline" className="texto-num">{results?.totalHosts}</Typography>
+                                </Grid2>
+                                <Grid2 size={6}>
+                                    <Typography variant="overline" className="pr-5 texto">{results.tipo}</Typography>
+                                    {results.priv ? <Typography variant="overline" className="texto">Red privada</Typography> : ""}
                                 </Grid2>
                             </Grid2>
                             
                             {SubnetMaskValue !== undefined && (
                                 <>
                                     <hr/>
-                                    <Typography variant="h6" gutterBottom className="text-center pb-2 pt-2">
+                                    <Typography variant="h6" gutterBottom className="text-center pb-2 pt-2 texto mt-2">
                                         Para la subred
                                     </Typography>
                                     <Grid2 container spacing={2}>
                                         <Grid2 size={6}>
-                                            <Typography variant="overline">Nueva mascara: {results.subnetMaskDecimal}</Typography>
+                                            <Typography variant="overline" className="texto">Nueva mascara: </Typography>
+                                            <Typography variant="overline" className="texto-num">{results.subnetMaskDecimal}</Typography>
                                         </Grid2>
                                         <Grid2 size={6}>
-                                            <Typography variant="overline">{results.subnetMaskBinario}</Typography>
+                                            <Typography variant="overline" className="texto-num">{results.subnetMaskBinario}</Typography>
                                         </Grid2>
                                     </Grid2>
                                     <Grid2 container spacing={2}>
                                         <Grid2 size={6}>
-                                            <Typography variant="overline">Bits para redes: {results.wildcardTotalDecimal}</Typography>
+                                            <Typography variant="overline" className="texto">Bits para redes: </Typography>
+                                            <Typography variant="overline" className="texto-num">{results.wildcardTotalDecimal}</Typography>
                                         </Grid2>
                                         <Grid2 size={6}>
-                                            <Typography variant="overline">{results.wildcardTotalBinario}</Typography>
+                                            <Typography variant="overline" className="texto-num">{results.wildcardTotalBinario}</Typography>
                                         </Grid2>
                                     </Grid2>
                                 </>
@@ -281,11 +290,11 @@ export default function ResultsEsc() {
                 {/* Tabla de subredes */}
                 {showTable && results && SubnetMaskValue !== undefined && visibleSubnets.length > 0 && (
                     <div className="w-full max-w-3xl">
-                        <TableContainer sx={{ maxHeight: '85vh', overflowY: 'auto' }} className="scroll-hidden">
+                        <TableContainer sx={{ maxHeight: '100vh', overflowY: 'auto' }} className="scroll-hidden">
                             <Table stickyHeader aria-label="sticky table" size="small">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Redes</TableCell>
+                                        <TableCell className="texto" sx= {{ fontSize: "17px" }}>Redes</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -296,7 +305,7 @@ export default function ResultsEsc() {
                                                 return (
                                                     <TableRow key={`placeholder-${index}`}>
                                                         <TableCell align="center">
-                                                            <Typography variant="h4">...</Typography>
+                                                            <Typography variant="h4" className="texto-num">...</Typography>
                                                         </TableCell>
                                                     </TableRow>
                                                 );
@@ -306,58 +315,55 @@ export default function ResultsEsc() {
                                                     <TableCell>
                                                         <Accordion>
                                                             <AccordionSummary expandIcon={<ExpandMore />}>
-                                                                Subred {subnet.index}
+                                                                <Typography className="texto pr-2">Subred</Typography><Typography className="texto-num" fontSize={14}>{subnet.index}</Typography>
                                                             </AccordionSummary>
                                                             <AccordionDetails>
                                                                 <Grid2 container spacing={2}>
                                                                     <Grid2 size={5}>
-                                                                        <Typography variant="overline">Red: {subnet.red}</Typography>
+                                                                        <Typography variant="overline" className="texto">Red: </Typography>
+                                                                        <Typography variant="overline" className="texto-num">{subnet.red}</Typography>
                                                                     </Grid2>
                                                                     <Grid2 size={7}>
-                                                                        <Typography variant="overline">{subnet.redBinario}</Typography>
+                                                                        <Typography variant="overline" className="texto-num">{subnet.redBinario}</Typography>
                                                                     </Grid2>
                                                                 </Grid2>
                                                                 <Grid2 container spacing={2}>
                                                                     <Grid2 size={5}>
-                                                                        <Typography variant="overline">Host Min: {subnet.hostMin}</Typography>
+                                                                        <Typography variant="overline" className="texto">Host Min: </Typography>
+                                                                        <Typography variant="overline" className="texto-num">{subnet.hostMin}</Typography>
                                                                     </Grid2>
                                                                     <Grid2 size={7}>
-                                                                        <Typography variant="overline">{subnet.hostMinBinario}</Typography>
+                                                                        <Typography variant="overline" className="texto-num">{subnet.hostMinBinario}</Typography>
                                                                     </Grid2>
                                                                 </Grid2>
                                                                 <Grid2 container spacing={2}>
                                                                     <Grid2 size={5}>
-                                                                        <Typography variant="overline">Host Max: {subnet.hostMax}</Typography>
+                                                                        <Typography variant="overline" className="texto">Host Max: </Typography>
+                                                                        <Typography variant="overline" className="texto-num">{subnet.hostMax}</Typography>
                                                                     </Grid2>
                                                                     <Grid2 size={7}>
-                                                                        <Typography variant="overline">{subnet.hostMaxBinario}</Typography>
+                                                                        <Typography variant="overline" className="texto-num">{subnet.hostMaxBinario}</Typography>
                                                                     </Grid2>
                                                                 </Grid2>
                                                                 <Grid2 container spacing={2}>
                                                                     <Grid2 size={5}>
-                                                                        <Typography variant="overline">Broadcast: {subnet.broadcast}</Typography>
+                                                                        <Typography variant="overline" className="texto">Broadcast: </Typography>
+                                                                        <Typography variant="overline" className="texto-num">{subnet.broadcast}</Typography>
                                                                     </Grid2>
                                                                     <Grid2 size={7}>
-                                                                        <Typography variant="overline">{subnet.broadcastBinario}</Typography>
+                                                                        <Typography variant="overline" className="texto-num">{subnet.broadcastBinario}</Typography>
                                                                     </Grid2>
                                                                 </Grid2>
                                                                 <Grid2 container spacing={2}>
                                                                     <Grid2 size={5}>
-                                                                        <Typography variant="overline">Host por net: {results.hostsPerSubnet}</Typography>
+                                                                        <Typography variant="overline" className="texto">Host por net: </Typography>
+                                                                        <Typography variant="overline" className="texto-num">{results.hostsPerSubnet}</Typography>
                                                                     </Grid2>
                                                                     <Grid2 size={4}>
-                                                                        <Typography variant="overline" className="pr-5">{results.tipo}</Typography>
-                                                                        {results.priv ? <Typography variant="overline">Red privada</Typography> : ""}
+                                                                        <Typography variant="overline" className="pr-5 texto">{results.tipo}</Typography>
+                                                                        {results.priv ? <Typography variant="overline" className="texto">Red privada</Typography> : ""}
                                                                     </Grid2>
                                                                 </Grid2>
-                                                                {/*<div className="space-y-2">
-                                                                    <div>Red: {subnet.red}</div>
-                                                                    <div>Rango de hosts: {subnet.rango}</div>
-                                                                    <div>Broadcast: {subnet.broadcast}</div>
-                                                                    <div>Host por red: {results.hostsPerSubnet}</div>
-                                                                    <div>{results.tipo}</div>
-                                                                    {results.priv ? <div>Red privada</div> : ""}
-                                                                </div>*/}
                                                             </AccordionDetails>
                                                         </Accordion>
                                                     </TableCell>
@@ -374,6 +380,10 @@ export default function ResultsEsc() {
                             count={visibleSubnets.length}
                             rowsPerPage={rowsPerPage}
                             page={page}
+                            labelRowsPerPage="Redes por página:"
+                            labelDisplayedRows={({ from, to, count }) =>
+                                `${from}-${to} de ${count !== -1 ? count : `más de ${to}`}`
+                            }
                             onPageChange={handleChangePage}
                             onRowsPerPageChange={handleChangeRowsPerPage}
                         />

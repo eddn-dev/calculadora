@@ -14,7 +14,7 @@ export default function Home() {
         <div className="scroll-hidden h-screen w-full">
             <ThemeWrapper prefersDarkMode={prefersDarkMode}>
                 <div className="flex flex-col items-center justify-center">
-                    <Typography variant="h4" gutterBottom className="text-center mt-2">
+                    <Typography variant="h4" gutterBottom className="text-center mt-2 titulo">
                         Calculadora de subredes
                     </Typography>
                     <ResultsEsc />

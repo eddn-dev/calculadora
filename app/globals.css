@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Colores para modo claro y oscuro */
 :root {
   --background: #F8F0EE;
   --text: #171717;
@@ -20,6 +21,29 @@
   }
 }
 
+/* Fuentes para la página */
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('./fonts/Cocogoose-Classic-Medium-trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KGSecondChances';
+  src: url('./fonts/KGSecondChancesSolid.ttf') format('truetype');
+  font-weight: solid;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Workforce';
+  src: url('./fonts/WorkforceGradient.otf') format('truetype');
+  font-weight: gradient;
+  font-style: normal;
+}
+
+/* Estilos para elementos dentro de la App */
 body {
   color: var(--text);
   background: var(--background);
@@ -55,3 +79,23 @@ body {
   display: none; /* Chrome, Safari y Edge */
 }
 
+.titulo {
+  font-family: 'Workforce', sans-serif;
+  font-weight: scale;
+}
+
+.texto {
+  font-family: 'Cocogoose', sans-serif;
+  font-weight: normal;
+}
+
+.texto-num {
+  font-family: 'KGSecondChances', sans-serif;
+  font-weight: solid;
+}
+
+.custom-label .MuiTypography-root {
+  font-family: 'KGSecondChances', sans-serif;
+  font-weight: solid;
+  font-size: 14px;
+}
