@@ -384,6 +384,22 @@ export default function ResultsEsc() {
                             labelDisplayedRows={({ from, to, count }) =>
                                 `${from}-${to} de ${count !== -1 ? count : `más de ${to}`}`
                             }
+                            sx={{
+                                '& .MuiTablePagination-select': {
+                                  fontFamily: 'KGSecondChances, sans-serif', // Cambia el estilo del número del select
+                                  fontSize: '12px',
+                                  fontWeight: 'solid',
+                                },
+                                '& .MuiTablePagination-selectLabel': {
+                                  fontFamily: 'Cocogoose, sans-serif', // Cambia "Redes por página"
+                                  fontSize: '15px',
+                                },
+                                '& .MuiTablePagination-displayedRows': {
+                                fontFamily: 'KGSecondChances, sans-serif',
+                                fontSize: '12px',
+                                fontWeight: 'solid', // Cambia el estilo de los números
+                                },
+                              }}
                             onPageChange={handleChangePage}
                             onRowsPerPageChange={handleChangeRowsPerPage}
                         />
