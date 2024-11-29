@@ -2,13 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Colores para modo claro y oscuro */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F8F0EE;
+  --text: #171717;
+  --components: #53D0EC;
+  --components2: #2748A0;
+  --esp: #E5386D;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #231934;
+    --text: #F1F1F1;
+    --esp: #246BFD;
+    --components: #8EC97B;
+    --components2: #F79193;
+  }
+}
+
+/* Fuentes para la página */
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('./fonts/Cocogoose-Classic-Medium-trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KGSecondChances';
+  src: url('./fonts/KGSecondChancesSolid.ttf') format('truetype');
+  font-weight: solid;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Workforce';
+  src: url('./fonts/WorkforceGradient.otf') format('truetype');
+  font-weight: gradient;
+  font-style: normal;
+}
+
+/* Estilos para elementos dentro de la App */
 body {
-  color: var(--foreground);
+  color: var(--text);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-field {
+  width: 150px;
+}
+
+.button {
+  background-color: var(--components2);
+}
+
+.custom-checkbox.Mui-checked {
+  color: var(--components2); /* Color cuando está seleccionado */
+}
+
+.custom-box {
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: var(--components2);
+}
+
+/* Ocultar las barras de desplazamiento para todos los navegadores */
+.scroll-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  overflow-y: scroll; /* Asegura que el scroll siga funcional */
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Edge */
+}
+
+.titulo {
+  font-family: 'Workforce', sans-serif;
+  font-weight: scale;
+}
+
+.texto {
+  font-family: 'Cocogoose', sans-serif;
+  font-weight: normal;
+}
+
+.texto-num {
+  font-family: 'KGSecondChances', sans-serif;
+  font-weight: solid;
+}
+
+.custom-label .MuiTypography-root {
+  font-family: 'KGSecondChances', sans-serif;
+  font-weight: solid;
+  font-size: 14px;
 }

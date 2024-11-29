@@ -7,35 +7,51 @@ interface NetMaskProps {
     setMask: (value: number) => void;
 }
 
-export default function NetMask({ setMask }: NetMaskProps){
-    const [localMask, setLocalMask] = React.useState<number>(24);
+export default function NetMask({ setMask }: NetMaskProps) {
+    const [localMask, setLocalMask] = React.useState<string>("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = Number(e.target.value);
-        setLocalMask(value);
-        setMask(value);
-    }
+        const value = e.target.value;
 
-    return(      
-        <div className="grid grid-cols-1">
+        if (value === "") {
+            setLocalMask(value);
+            return;
+        }
+
+        const numericValue = Number(value);
+        if (numericValue >= 1 && numericValue <= 32) {
+            setLocalMask(value);
+            setMask(numericValue);
+        }
+    };
+
+    return (
+        <div className="grid grid-cols-1 sm:w-auto w-full">
             <div className="flex mb-2">
-                <Typography
-                    variant="overline"
-                >
+                <Typography variant="overline" className="text-center sm:text-left texto">
                     Máscara de red:
                 </Typography>
             </div>
             <div className="-mt-2">
-                <TextField 
+                <TextField
                     id="outlined-basic"
-                    label="Bits de la MAC"
+                    label="Bits MAC"
                     variant="outlined"
                     size="small"
                     type="number"
                     value={localMask}
-                    onChange={handleChange}  
-                    />
+                    onChange={handleChange}
+                    className="text-field texto"
+                    slotProps={{
+                        input: {
+                            inputProps: {
+                                min: 1,
+                                max: 32,
+                            },
+                        },
+                    }}
+                />
             </div>
-        </div> 
+        </div>
     );
 }
